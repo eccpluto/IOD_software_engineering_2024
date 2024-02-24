@@ -5,7 +5,7 @@ Also included will be laboratory exercises and projects.
 
 _note_to_self_
 --
-I use SSH aliases (~/.ssg/config) to allow for multiple git accounts to interface with github securely, and keeping account work separate. Be sure to pass the appropriate alias as the prefix when clonging a repo.
+I use SSH aliases (~/.ssg/config) to allow for multiple git accounts to interface with github securely, and keeping account work separate. Be sure to pass the appropriate alias as the prefix when interacting with a repo.
 
 See:
 
