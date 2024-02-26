@@ -1,5 +1,5 @@
 # exercise 07
-## bief:
+## brief:
 Using the functions you created for Exercise 4:
 
 • Write a specification comment for each function
