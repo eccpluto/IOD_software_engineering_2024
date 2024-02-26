@@ -1,5 +1,5 @@
 # exercise 06
-## bief:
+## brief:
 • Try creating a json object variable for a book. The book should
 have a title, description, author and number of pages
 

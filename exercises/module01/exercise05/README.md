@@ -1,5 +1,5 @@
 # exercise 05
-## bief:
+## brief:
 • For understanding more about arrays, try creating an array that
 has 5 elements.
 

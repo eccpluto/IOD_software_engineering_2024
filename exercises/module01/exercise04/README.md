@@ -1,5 +1,5 @@
 # exercise 04
-## bief:
+## brief:
 Use the learnings from this lesson to design some very simple
 functions. Call them with different values.
 
