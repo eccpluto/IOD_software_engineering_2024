@@ -17,8 +17,8 @@ breedsOfCamel[3] = "Llama";
 breedsOfCamel.unshift("New Variant X");
 // console.log(breedsOfCamel);
 
-// add a new element to the end of the array
-breedsOfCamel.push("New Variant Y");
+// remove element from the end of the array
+breedsOfCamel.pop();
 
 // print the final array
 // console.log(breedsOfCamel);
