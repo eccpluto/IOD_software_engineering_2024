@@ -5,8 +5,9 @@
  * @returns {number}
  */
 
-function getDiceRoll(faces) {
+
+function getDiceRoll() {
 
     // get a unmber between 1 and the number of faces
-    return Math.floor(Math.random() * faces) + 1;
+    return Math.floor(Math.random() * g_faces) + 1;
 }

@@ -23,6 +23,39 @@ footer {
     text-align: center;
 }
 
-.utility {
+
+.utility-container {
+    text-align: center;
     background-color: aquamarine;
+}
+
+.dice-container {
+    /* get dice lined up horizontally */
+    display: flex;
+    /* contain the dice in the centre of the div */
+    justify-content: center;
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    /* position: relative; */
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.dice-number {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background-color: white;
+    font-size: 50px;
+}
+
+.btn-roll-dice {
+    margin-top: 10px;
+}
+
+#btnSubmitDiceType {
+    width: 10em;
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Tabletop Games Utilities by devsInc</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,10 +13,21 @@
             Tabletop games utilities
         </h1>
     </header>
-    <section class="utility">
+    <div class="utility-container">
         <h2>Virtual Dice</h2>
-        <button onclick="getDiceRoll()">Roll</button>
-    </section>
+        <div class="dice-container">
+            <div class="dice">
+                <!-- don't display dice faces as will get complicated -->
+                <div class="dice-number" id="diceNumber">
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-roll-dice" onclick="printDiceRoll()">Roll Dice</button>
+        <input type="text" id="textInputDiceType">
+        <input type="button" id="btnSubmitDiceType" onclick="updateDiceType()" value="Change Dice">
+        
+    </div>
     <footer>
         @Copywrite devsInc 2024
     </footer>    
