@@ -7,7 +7,7 @@
 
 let g_faces = 6; // D6 as default dice type / number of faces
 
-function getDiceRoll(faces) {
+function getDiceRoll() {
 
     // get a unmber between 1 and the number of faces
     return Math.floor(Math.random() * g_faces) + 1;
