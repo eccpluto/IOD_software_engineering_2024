@@ -30,3 +30,23 @@ function printDiceRoll() {
     let test = getDiceRoll();
     document.getElementById("diceNumber").innerHTML = test;
 }
+
+/**
+ * Combined unit test function that calls all unit tests
+ */
+function runUnitTests() {
+    // while we should hand negative numbers, we are only expecting users to use positive numbers greater thanzero
+    g_faces = -1
+    if(!getDiceRoll() < 0) {
+        console.error("Dice should be negative for negative face value");
+    }
+
+    // we also do not expect users to use a dice with a zero number of faces
+    g_faces = 0
+    if(getDiceRoll() != 1) {
+        console.error("Dice should be 1, for a face value of 0");
+    }
+}
+
+// this is run when the script is loaded
+runUnitTests();
