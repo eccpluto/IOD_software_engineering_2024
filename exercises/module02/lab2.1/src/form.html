@@ -8,9 +8,60 @@
   <header>
     <nav>
       <!-- works like <a href="/index.html">Home</a> -->
-      <a href="/">Home</a>
+      <a href=".">Home</a>
     </nav>
   </header>
+
+  <form method="post" action="http://127.0.0.1:5000/form.html"">
+
+    <!-- Name -->
+    <div>
+      <label for="inputFirstName">First Name</label>
+      <input type="text" name="inputFirstName" id="inputFirstName">
+    </div>
+    <div>
+      <label for="inputLastName">Last Name</label>
+      <input type="text" name="inputLastName" id="inputLastName"> 
+    </div>
+
+    <!-- Favourite coding language -->
+    <div>
+      <label for="radioPython">Python</label>
+      <input type="radio" name="favLanguage" id="radioPython">
+
+      <label for="radioPascal">Pascal</label>
+      <input type="radio" name="favLanguage" id="radioPascal">
+   
+      <label for="radioOther">Other</label>
+      <input type="radio" name="favLanguage" id="radioOtherLanguage">
+    </div>
+
+    <!-- Type of vehicle -->
+    <div>
+      <label for="chkManual">Manul</label>
+      <input type="checkbox" name="chkManual" id="chkManual">
+    </div>
+    <div>    
+      <label for="chkAutomatic">Automatic</label>
+      <input type="checkbox" name="chkAutomatic" id="chkAutomatic">
+    </div>
+    <div>
+      <label for="chkOther">Other</label>
+      <input type="checkbox" name="chkOtherTransmission" id="chkOtherTransmission">
+    </div>
+
+    <label for="selectCarBrand">What make is your car?</label>
+    <select name="selectCarBrand" id="selectCarBrand">
+      <option value="makeSubaru">Subaru</option>
+      <option value="makeToyota">Toyota</option>
+      <option value="makeChevrolet">Chevrolet</option>
+      <option value="makeOther">Other</option>
+    </select>
+
+    <div>
+      <button type="submit">Suibmit Form</button>
+    </div>  
+    </form>
 
   <main>
   </main>
