@@ -2,9 +2,114 @@
 <html>
 
 <head>
+  <title>Lab 2.1 Exercise</title>
+  <!-- Part II. -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Landing page for Lab21, focussing on HTML elements">
+  <meta name="keywords" content="exercise, lab, html, practice, meta">
+  <meta name="author" content="eccpluto@github">
+  <meta name="viewport" content="width=device-width, intial-scale=1">
+
+  <style>
+    table, th, td {
+      /* provide the table with some outrageously good styling */
+        border: 1px solid black;
+    }
+</style>
 </head>
 
 <body>
+  <h1>My Cool HTML Page Headline</h1>
+  <article>
+    <h2>Learning Elements: div, span, p, pre, ul, ol, li, and article</h2>
+    <!-- Part III. -->
+    <!-- div is a block element -->
+    <div>HTML</div> <div>CSS</div> <div>JavaScript</div>
+    
+    <!-- span is an inline element  -->
+    <span>Some</span> <span>Interesting</span> <span>Content</span>
+
+    <p>
+      p represents paragraph     without preserving      spacing
+    </p>
+    <!-- pre for "preserve" -->
+    <pre>
+      Text in         a pre element
+      is displayed in a fixed-width
+      font, and it preserves
+      both      spaces and
+      line breaks
+    </pre>
+
+
+    <ul>
+      <li>Unordered List Item #1</li>
+      <li>Unordered List Item #2</li>
+      <li>Unordered List Item #3</li>
+      <li>Unordered List Item #4</li>
+    </ul>
+    
+    <ol>
+      <li>Ordered List Item #1</li>
+      <li>Ordered List Item #2</li>
+      <li>Ordered List Item #3</li>
+      <li>Ordered List Item #4
+        <ul>
+          <li>Unordered, nested List Item #1</li>
+          <li>Unordered, nested List Item #2</li>
+        </ul>
+      </li>
+    </ol>
+  </article>
+
+  <!-- Part IV. -->
+  <article>
+    <h2>Article 2</h2>
+    <table>
+      <thead>
+      <tr>
+          <th>First header</th>
+          <th>Second header</th>
+          <th>Third header</th>
+      </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>First cell - first row</td>
+              <td>Second cell - first row</td>
+              <td>Third cell - first row</td>
+          </tr>
+          <!-- Created a new row -->
+          <tr>
+            <td>First cell - second row</td>
+            <td>Second cell - second row</td>
+            <td rowspan="2">Third Cell - second row</td>
+        </tr>
+        <tr>
+          <th>Subtable header 1</th>
+          <th>Subtable header 2</th>
+          <!-- At this point I also added rowspan="2" above -->
+        </tr>
+      </tbody>
+    </table> 
+  </article>
+
+  <article>
+    <h2>Article 3</h2>
+    <img src="https://picsum.photos/400/400" alt="a picturesque image"/>
+    <img src="assets/html_lab_image.jpg" alt="sun on horizon image" height="400px" width="400px">
+    <video autoplay width="250">
+      <source src="assets/flower.webm" type="video/webm">
+      Sorry, your browser doesn't support embedded videos.
+  </video>
+
+  <figure>
+    <audio autoplay src="assets/t-rex-roar.mp3">
+      Your browser does not support the <code>audio</code> element.
+    </audio>
+    <figcaption>A T-Rex roaring.</figcaption>
+  </figure>
+
   <header>
     <nav>
       <!-- works like <a href="/index.html">Home</a> -->
