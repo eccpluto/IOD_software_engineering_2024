@@ -1,128 +1,199 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="index.css">
-    <title>Module 2 - CSS Lab Exercises</title>
 
-    <!-- 5.3 - Select the <link> option from ‘Use on the web’ and copy the stylesheet code into the <head> section of index.html -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">    
-  </head>
-  <body>
-    <h1>My CSS journey</h1>
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Module 2 - CSS Lab Exercises</title>
 
-    <article>
-      <h2>I. Selectors</h2>
+  <!-- 5.3 - Select the <link> option from ‘Use on the web’ and copy the stylesheet code into the <head> section of index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-      <section>
-        <p class="style-me1">
-          1.2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p id="style-me2">
-          1.3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <p id="style-me2" class="style-me1">
-          1.4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </section>
+  <style>
+    /* Part I. */
+    article {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid black;
+    }
 
-      <section class="my-children-are-styled">
-        <h3>2.1 Direct &lt;p&gt; children are styled</h3>
-        <div>
-          <p>P1: I'm not a direct child, but I am a descendant</p>
-        </div>
-        <p>P2: I'm a direct child, therefore I'm a descendant too</p>
-      </section>
+    .style-me1 {
+      color: red;
+    }
 
-      <section class="my-descendants-are-styled">
-        <h3>2.2 All descendants &lt;p&gt; are styled</h3>
-        <div>
-          <p>P1: I'm not a direct child, but I am a descendant</p>
-        </div>
-        <p>P2: I'm a direct child, therefore I'm a descendant too</p>
-      </section>
-    </article>
+    #style-me2 {
+      color: blue;
+    }
 
-    <article>
-      <h2>II. Box model and common properties</h2>
-      <div class="box">I'm the first box.</div>
-      <div class="box">
-        I'm second and I have a lot of content. In publishing and graphic
-        design, Lorem ipsum is a placeholder text commonly used to demonstrate
-        the visual form of a document or a typeface without relying on
-        meaningful content. "Lorem ipsum dolor sit amet, consectetur adipiscing
-        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-        qui officia deserunt mollit anim id est laborum."
-      </div>
-      <div class="box" style="height: 200px">
-        My height is set using directly using style attribute.
-      </div>
-    </article>
+    #style-me2.style-me1 {
+      color: purple;
+    }
 
-    <article>
-      <h2>III. Positioning</h2>
-      <div class="position-absolute">I'm absolutely positioned.</div>
+    /* descendant styling p elements, if they descend from my-descendants-are-styled */
+    .my-descendants-are-styled p {
+      background-color: red;
+    }
 
-      <div class="position-relative">
-        I'm relatively positioned.
-        <div class="position-absolute">I'm absolutely positioned inside a relative container.</div>
-      </div>
-    </article>
-    <div class="position-sticky">I'm sticky positioned.</div>
+    /* child styling of p elements if they are children (direct descendants) of my-children-are-styled */
+    .my-children-are-styled>p {
+      background-color: lightgreen;
+    }
 
-    <article>
-      <h2>IV. Styling text</h2>
-      <p class="text-style">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+    /* Part II. */
+    .box {
+      background-color: aqua;
+      background-image: url(../assets/images/img1.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      /* width: 1000px; */
+      /* height: 10px; */
+      /* overwite the inline styling of the 3rd box using the !important operator */
+      /* the dependency on the viewport size means resizing the browser will resize the box
+          element as a percentage of the viewport size  */
+      height: 60vh !important;
+      width: 50vw;
+
+      /* auto creates scrollable bars */
+      /* hidden truncates */
+      /* visible show all overflow */
+      overflow: hidden;
+
+      outline: solid blueviolet 10px;
+
+      /* 50% makes the border become an ellipsoid - which is circular when height=width */
+      border-radius: 25%;
+
+      /* border-box makes the width correspond to the sum of margin, boarder, padding and width (height) */
+      /* content-box makes the width correspond to the space inside the padding region only */
+      box-sizing: content-box;
+      /* border-box */
+
+      /* increased padding so we can see the text with curved border */
+      padding: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My CSS journey</h1>
+
+  <article>
+    <h2>I. Selectors</h2>
+
+    <section>
+      <p class="style-me1">
+        1.2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
-    </article>
+      <p id="style-me2">
+        1.3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p id="style-me2" class="style-me1">
+        1.4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </section>
 
-    <article>
-      <h2>V. Styling links</h2>
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links"
-        alt="Styling links with Mozilla"
-        >Styling links (Mozilla)</a
-      >
-    </article>
-
-    <article>
-      <h2>VI. calc()</h2>
-      <div class="calc-style">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum."
+    <section class="my-children-are-styled">
+      <h3>2.1 Direct &lt;p&gt; children are styled</h3>
+      <div>
+        <p>P1: I'm not a direct child, but I am a descendant</p>
       </div>
+      <p>P2: I'm a direct child, therefore I'm a descendant too</p>
+    </section>
 
-      <div class="calc-row">
-        <div class="fixed-width-col"><img src="assets/images/img1.png" width="300"/></div>
-        <div class="fluid-col">This text should expand to fill 'the rest' of the page width not used by the image inside the fixed-width-col.
-          This text should expand to fill 'the rest' of the page width not used by the image inside the fixed-width-col.
-          This text should expand to fill 'the rest' of the page width not used by the image inside the fixed-width-col.
-        </div>
+    <section class="my-descendants-are-styled">
+      <h3>2.2 All descendants &lt;p&gt; are styled</h3>
+      <div>
+        <p>P1: I'm not a direct child, but I am a descendant</p>
       </div>
-    </article>
+      <p>P2: I'm a direct child, therefore I'm a descendant too</p>
+    </section>
+  </article>
 
-    <div style="height: 1000px; background: #AA99CC">
-      I'm here just for height, to fill in extra space and pretend that the website is longer than it really is :).
+  <article>
+    <h2>II. Box model and common properties</h2>
+    <div class="box" style="margin-top: 10px; margin-bottom: 10px; margin-left: 10px; margin-right: 10px;
+    border: 10px solid burlywood;">
+      I'm the first box.
     </div>
-  </body>
+    <div class="box" style="padding-top: 50px; padding-bottom: 50px; padding-left: 50px; padding-right: 50px;
+    border: 10px dashed gold; width: 10px;">
+      I'm second and I have a lot of content. In publishing and graphic
+      design, Lorem ipsum is a placeholder text commonly used to demonstrate
+      the visual form of a document or a typeface without relying on
+      meaningful content. "Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+      qui officia deserunt mollit anim id est laborum."
+    </div>
+    <div class="box" style="height: 200px">
+      My height is set using directly using style attribute.
+    </div>
+  </article>
+
+  <article>
+    <h2>III. Positioning</h2>
+    <div class="position-absolute">I'm absolutely positioned.</div>
+
+    <div class="position-relative">
+      I'm relatively positioned.
+      <div class="position-absolute">I'm absolutely positioned inside a relative container.</div>
+    </div>
+  </article>
+  <div class="position-sticky">I'm sticky positioned.</div>
+
+  <article>
+    <h2>IV. Styling text</h2>
+    <p class="text-style">
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum."
+    </p>
+  </article>
+
+  <article>
+    <h2>V. Styling links</h2>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links"
+      alt="Styling links with Mozilla">Styling links (Mozilla)</a>
+  </article>
+
+  <article>
+    <h2>VI. calc()</h2>
+    <div class="calc-style">
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum."
+    </div>
+
+    <div class="calc-row">
+      <div class="fixed-width-col"><img src="assets/images/img1.png" width="300" /></div>
+      <div class="fluid-col">This text should expand to fill 'the rest' of the page width not used by the image inside
+        the fixed-width-col.
+        This text should expand to fill 'the rest' of the page width not used by the image inside the fixed-width-col.
+        This text should expand to fill 'the rest' of the page width not used by the image inside the fixed-width-col.
+      </div>
+    </div>
+  </article>
+
+  <div style="height: 1000px; background: #AA99CC">
+    I'm here just for height, to fill in extra space and pretend that the website is longer than it really is :).
+  </div>
+</body>
+
 </html>
