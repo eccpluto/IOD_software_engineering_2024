@@ -74,6 +74,34 @@
       /* increased padding so we can see the text with curved border */
       padding: 100px;
     }
+
+    /* Part III. */
+    .position-absolute {
+      position: absolute;
+      top: 0px;
+      /* When defining left and right properties, this increases the
+        region of the element from the respective side. */
+      left: 10px;
+      right: 100px;
+      background-color: darkorange;
+    }
+
+    .position-relative {
+      background-color: yellow;
+      /* Note absolute positioning within the relative-positioned clas
+        makes the nested absolute-positioned class, become relative to the
+        parent relative-positioned class. */
+      position: relative;
+    }
+
+    .position-sticky {
+      position: sticky;
+      /* this will tick the element to the viewport, constrained to
+        always be at least 10pc from the top of the viewport */
+      top: 10px;
+      /* bottom: 10px; */
+      background-color: chocolate;
+    }
   </style>
 </head>
 
