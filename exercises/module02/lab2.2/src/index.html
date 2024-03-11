@@ -2,7 +2,11 @@
 <html>
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  
   <title>Module 2 - CSS Lab Exercises</title>
 
   <!-- 5.3 - Select the <link> option from ‘Use on the web’ and copy the stylesheet code into the <head> section of index.html -->
@@ -101,6 +105,24 @@
       top: 10px;
       /* bottom: 10px; */
       background-color: chocolate;
+    }
+
+    /* Part IV. */
+    .text-style {
+      color: rgb(4, 104, 104);
+      font-size: 100%;
+      /* space between consecutive lines */
+      line-height: 50px;
+      /* glyph density */
+      font-weight: 900;
+      /* this font family is made available in the cloud
+        for the user, by embedding the font in the head section above */
+      font-family: "Martian Mono", monospace, sans-serif;
+      text-align: center;
+      letter-spacing: 10px;
+      word-spacing: 1px;
+      text-transform: lowercase;
+      text-decoration: line-through;
     }
   </style>
 </head>
