@@ -1,20 +1,121 @@
 /* I. Selectors */
 /* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
+article {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.style-me1 {
+    color: red;
+}
+
+#style-me2 {
+    color: blue;
+}
+
+#style-me2.style-me1 {
+    color: purple;
+}
 
 /* Put styles for questions 2.1 and 2.2 here */
+/* descendant styling p elements, if they descend from my-descendants-are-styled */
+.my-descendants-are-styled p {
+    background-color: red;
+}
 
+/* child styling of p elements if they are children (direct descendants) of my-children-are-styled */
+.my-children-are-styled>p {
+    background-color: lightgreen;
+}
 
 /* II. Box model and common properties */
 /* Put styles for questions 1-8 here */
+.box {
+    background-color: aqua;
+    background-image: url(../assets/images/img1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* width: 1000px; */
+    /* height: 10px; */
+    /* overwite the inline styling of the 3rd box using the !important operator */
+    /* the dependency on the viewport size means resizing the browser will resize the box
+        element as a percentage of the viewport size  */
+    height: 60vh !important;
+    width: 50vw;
+
+    /* auto creates scrollable bars */
+    /* hidden truncates */
+    /* visible show all overflow */
+    overflow: hidden;
+
+    outline: solid blueviolet 10px;
+
+    /* 50% makes the border become an ellipsoid - which is circular when height=width */
+    border-radius: 25%;
+
+    /* border-box makes the width correspond to the sum of margin, boarder, padding and width (height) */
+    /* content-box makes the width correspond to the space inside the padding region only */
+    box-sizing: content-box;
+    /* border-box */
+
+    /* increased padding so we can see the text with curved border */
+    padding: 100px;
+}
 
 /* III. Positioning */
 /* Put styles for questions 1-3 here */
+.position-absolute {
+    position: absolute;
+    top: 0px;
+    /* When defining left and right properties, this increases the
+      region of the element from the respective side. */
+    left: 10px;
+    right: 100px;
+    background-color: darkorange;
+}
 
+.position-relative {
+    background-color: yellow;
+    /* Note absolute positioning within the relative-positioned clas
+      makes the nested absolute-positioned class, become relative to the
+      parent relative-positioned class. */
+    position: relative;
+}
+
+.position-sticky {
+    position: sticky;
+    /* this will tick the element to the viewport, constrained to
+      always be at least 10pc from the top of the viewport */
+    top: 10px;
+    /* bottom: 10px; */
+    background-color: chocolate;
+}
 
 /* IV. Styling text */
 /* Put styles for questions 1-10 here */
-
+.text-style {
+    color: rgb(4, 104, 104);
+    font-size: 100%;
+    /* space between consecutive lines */
+    line-height: 50px;
+    /* glyph density */
+    font-weight: 900;
+    /* this font family is made available in the cloud
+      for the user, by embedding the font in the head section above */
+    font-family: "Martian Mono", monospace, sans-serif;
+    text-align: center;
+    letter-spacing: 10px;
+    word-spacing: 1px;
+    text-transform: lowercase;
+    text-decoration: line-through;
+}
 
 /* V. Styling links */
 /* Put styles for questions 1-3 here */
