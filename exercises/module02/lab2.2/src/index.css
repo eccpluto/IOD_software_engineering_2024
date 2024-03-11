@@ -119,7 +119,24 @@ article {
 
 /* V. Styling links */
 /* Put styles for questions 1-3 here */
-
+a,a:link {
+    color: orange;
+    font-size: larger;
+    font-weight: 600;
+    text-decoration: wavy;
+}
+a:hover,a:active,a:focus {
+    /* override the color with a darker shade */
+    filter: brightness(70%);
+    text-decoration: underline;
+}
+a:visited {
+    color: darkcyan;
+    /* :visited selector cannot change this style property
+        as there it can be used to violate a users
+        privacy. */
+    font-style: italic;
+}
 
 /* VI. calc() */
 /* Put styles for questions 1-3 here */
