@@ -140,3 +140,25 @@ a:visited {
 
 /* VI. calc() */
 /* Put styles for questions 1-3 here */
+.calc-style {
+    /* width: 100vw; */
+    width: calc(100vw - 100px);
+    background-color: aqua;
+}
+
+.fixed-width-col {
+    /* background-color: blueviolet; */
+    width: 350px;
+    display: inline-block;
+}
+
+.fluid-col {
+    /* background-color: thistle; */
+    display: inline-block;
+    /* set dynamic width */
+    width: calc(100vw - 500px);
+}
+
+.calc-row {
+    /* width: 100px; */
+}
