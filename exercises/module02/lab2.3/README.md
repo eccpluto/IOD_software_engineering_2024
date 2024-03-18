@@ -1,14 +1,16 @@
 # Lab 3 - Flexbox
 
 The goal of this lab is to help familiarise yourself with flexbox. You should not need to modify the index.html page, only index.css.
+
 In this lab we will be using functional CSS. This focuses on using naming for CSS classes that reflect the functionality of the class, e.g. m-20 class will correspond to a 4-sided margin with a value of 20 units, and mt-20 will correspond to a margin-top value of 20 units.
 
 
-    1. Familiarize yourself with the provided CSS and HTML files for Exercise 3, paying attention to the class names and element structure
+1. Familiarize yourself with the provided CSS and HTML files for Exercise 3, paying attention to the class names and element structure
 
-    2. Basic flexbox :
-        2.1. Add a CSS rule for the flex-container class and set it to use a flexbox display model 
-        2.2. Add rules for the flex-item-1, -2, -3, and -4 classes and set flex: <number> to them accordingly
+2. Basic flexbox :
+    2.1. Add a CSS rule for the flex-container class and set it to use a flexbox display model 
+    
+    2.2. Add rules for the flex-item-1, -2, -3, and -4 classes and set flex: <number> to them accordingly
         2.3. Compare how the HTML file looks in a browser before and after your changes. How does the value for the flex affect the size of the item?
 
     3. Centering with flexbox :
