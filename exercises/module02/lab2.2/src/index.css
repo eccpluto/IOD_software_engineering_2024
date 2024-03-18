@@ -47,7 +47,7 @@ article {
     /* overwite the inline styling of the 3rd box using the !important operator */
     /* the dependency on the viewport size means resizing the browser will resize the box
         element as a percentage of the viewport size  */
-    height: 60vh !important;
+    height: 80vh;
     width: 50vw;
 
     /* auto creates scrollable bars */
