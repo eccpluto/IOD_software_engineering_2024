@@ -58,7 +58,7 @@ article {
     outline: solid blueviolet 10px;
 
     /* 50% makes the border become an ellipsoid - which is circular when height=width */
-    border-radius: 25%;
+    border-radius: 50%;
 
     /* border-box makes the width correspond to the sum of margin, boarder, padding and width (height) */
     /* content-box makes the width correspond to the space inside the padding region only */
