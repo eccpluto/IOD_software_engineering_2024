@@ -41,3 +41,109 @@ a {
 }
 
 /* Add your answers here, do not modify the above CSS */
+.flex-container {
+    display: flex;
+    /* define the main flex axis, row is default,
+        row-reverse will place flex items in the opposite
+        ro direction (right to left) and column rotates the
+        the main flex axis by 90 degrees i.e. it becomes
+        a vertical axis (column instead of row) */
+    flex-direction: row;
+}
+
+/* Note the value of flex changes the width occupied
+    by flex-items inside the flex container */
+.flex-item-1 {
+    flex: auto;
+}
+
+.flex-item-2 {
+    flex: auto;
+}
+
+.flex-item-3 {
+    flex: auto;
+}
+
+.flex-item-4 {
+    flex: auto;
+}
+
+.flex-center {
+    /* aligns content along main axis of flex container */
+    justify-content: center;
+    /* aligns content on the cross axis to the main axis 
+        of the flex container, that is orthogonal to the main axis */
+    align-items: center;
+}
+
+.flex-space-between {
+    /* push elements apart so there is maximum space between */
+    justify-content: space-between;
+}
+
+/* these are flex items within a flex container */
+.flex-basis-item-50 {
+    /* defines the base step for which items are tiled */
+    flex-basis: 25%;
+}
+
+/* this class is composed with the flex container */
+.flex-wrap {
+    /* using wrap reverse will wrap the flex items
+        from the bottom up */
+    flex-wrap: wrap;
+}
+
+.flex-menu {
+    justify-content:  center;
+    flex-direction: row;
+    /* flex-flow: row nowrap; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* approximate height as shown in example image to replicate */
+    height: 50px;
+    /* remove bullet points on unordered list items */
+    list-style-type: none;
+    /* make the item text appear without any prepended margin space */
+    padding: 0px;
+    /* approximate gap as shown in example image to replicate */
+    gap: 3px;
+    /* so bold */
+    font-weight: 900;
+}
+
+.first-item {
+    padding: 14px;
+    /* text-anchor: middle; */
+    flex-grow: 1;
+    text-align: center;
+}
+
+.second-item {
+    padding: 14px;
+    /* height: 50px;
+    width: 10px; */
+    flex-grow: 1;
+    text-align: center;
+}
+
+.third-item {
+    padding: 14px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.fourth-item {
+    padding: 14px;
+    /* make this the first item, in reverse row appear last */
+    order: 1;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.fifth-item {
+    padding: 14px;
+    flex-grow: 1;
+    text-align: center;
+}

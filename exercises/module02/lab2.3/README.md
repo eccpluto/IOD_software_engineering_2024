@@ -8,6 +8,7 @@ In this lab we will be using functional CSS. This focuses on using naming for CS
 1. Familiarize yourself with the provided CSS and HTML files for Exercise 3, paying attention to the class names and element structure
 
 2. Basic flexbox :
+    
     2.1. Add a CSS rule for the flex-container class and set it to use a flexbox display model
     
     2.2. Add rules for the flex-item-1, -2, -3, and -4 classes and set flex: <number> to them accordingly
