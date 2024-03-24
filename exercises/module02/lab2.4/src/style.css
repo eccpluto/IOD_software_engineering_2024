@@ -1,6 +1,22 @@
-h2 {
-  margin-top: 0cm;
-  margin-bottom: 0.1cm;
+:root {
+  /* cyberpunk colour pallet */
+  --colorBlue: #467fa1;
+  --colorPurple: #54295c;
+  --colorDarkBlue: #061f2b;
+  --colorDarkPurple: #1e0f1d;
+  --colorRed: #5e0b0b;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    .leftPanel {
+      /* restrict size of size panel from continuing to expand*/
+      width: 300px;
+    }
+    .rightPanel {
+      width: 500px;
+    }
+  }
 }
 
 p {
@@ -9,29 +25,33 @@ p {
 }
 
 body {
-  background: rgb(204, 204, 204);
-  width: 21cm;
-  height: 29.7cm;
+  color: var(--colorDarkBlue);
+  /* width: 21cm; */
+  /* height: 29.7cm; */
   margin: 0 auto;
 }
 
-section {
-  padding-bottom: 0.7cm;
-  padding-top: 0.7cm;
-}
-
-section h2{
+h2 {
   margin-top: 0;
+  margin-bottom: 0;
+  color: var(--colorBlue);
 }
 
-ul {
-  padding-top: 0%;
-  padding-left: 5%;
+h3 {
+  margin-top: 10px;
+  color: var(--colorBlue);
 }
 
-ul li {
-  padding: 0%;
+ul,
+li {
   list-style-type: none;
+  padding-left: 10px;
+}
+
+table {
+  border: #54295c solid;
+  border-radius: 5%;
+  border
 }
 
 .flexContainer {
@@ -41,10 +61,9 @@ ul li {
   height: 100%;
 }
 
-/* these are both flex containers and flex items */
 .leftPanel {
   width: 30%;
-  background-color: #484444;
+  background-color: var(--colorDarkBlue);
   padding: 0.7cm;
   display: flex;
   flex-direction: column;
@@ -54,18 +73,12 @@ ul li {
 .rightPanel {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
   padding-left: 1cm;
 }
 
-.leftPanel section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-}
-
-.leftPanel{
+/* specify style of left panel */
+.leftPanel {
   color: #bebebe;
   text-decoration: none;
 }
@@ -84,7 +97,7 @@ ul li {
   border-radius: 35%
 }
 
-.leftPanel{
+.leftPanel {
   font-size: 0.38cm;
 }
 
