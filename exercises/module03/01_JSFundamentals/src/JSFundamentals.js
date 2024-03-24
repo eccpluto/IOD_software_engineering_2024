@@ -1,4 +1,4 @@
-// Question 01: results of expressions
+console.log("Question 01: results of expressions:\n");
 
 console.log("" + 1 + 0);    // seeing a string first, will concatenate component into a string
 console.log("" - 1 + 0);    // will do math operation, since the hyphen is subtraction operator
@@ -20,3 +20,50 @@ console.log(" \t \n" - 2);  /* concatenates into a single string,
                              * performs escape character sequences resulting in -2
                              * printed 1 TAB to the right on the second line
                              */
+
+console.log("\nQuestion 02: diagnosing incorrect answers:\n");
+
+let three   = "3";
+let four    = "4";
+let thirty  = "30";
+
+// what is the value of the following expressions?
+let addition = three + four;                            // results in "34" - this is incorrect because + acts as concatenation on strings
+let additionCorrected = Number(three) + Number(four);   // converting to numbers makes the + do number addition
+
+let multiplication = three * four;                      // results in 12;
+let division = three / four;                            // results in 0.75
+let subtraction = three - four;                         // results in -1
+
+let lessThan1 = three < four;                           // results in true
+let lessThan2 = thirty < four;                          // results in false - this is incorrect as the < operator only compares the first character in the string
+let lessThan2Corrected = Number(thirty) < Number(four); // converting to Number type makes the operator evaluate the number and not a string
+
+console.log(addition);
+console.log(additionCorrected);
+console.log(multiplication);
+console.log(division);
+console.log(subtraction);
+console.log(lessThan1);
+console.log(lessThan2);
+console.log(lessThan2Corrected);
+
+console.log("\nWhich of the following console.log messages will print? Why?\n")
+
+if (0) console.log('#1 zero is true')   // the numeric value of true is 1, so this will not print
+if ("0") console.log('#2 zero is true') // the boolean value of any non-empty string is true, so this will print
+if (null) console.log('null is true')   // null is an intentional lack of a value, and objects without a value are false
+if (-1) console.log('negative is true') // -1 is a Number type of value -1, which is true (only the number 0 has a boolean value of false)
+if (1) console.log('positive is true')  // 1 is the numerical value of true
+
+console.log("\nRewrite this if using the ternary/conditional operator '?'. Test it with different values for a and b. What does the ‘+=’ do?\n")
+
+let a = 2, b = 3;
+let result = `${a} + ${b} is `;
+if (a + b < 10) {
+    result += 'less than 10';
+} else {
+    result += 'greater than 10';
+}
+
+// using the rewritten TODO
