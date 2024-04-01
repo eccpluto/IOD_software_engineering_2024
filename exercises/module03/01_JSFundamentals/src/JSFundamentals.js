@@ -16,11 +16,9 @@ console.log(null + 1);      // will just print the number 1, as null serves to i
 console.log(undefined + 1); // will attempt to add 1 to undefined, resulting in NaN
 console.log(undefined == null);     // checks equivalence (value test), implicitly converts to same type, true
 console.log(undefined === null);    // checks equality (value and type test), compares type directly without conversion, false
-console.log(" \t \n" - 2);  /* concatenates into a single string,
-                             * performs escape character sequences resulting in -2
-                             * printed 1 TAB to the right on the second line
-                             */
-
+console.log(" \t \n" - 2);  /* tried to convert escape character sequences to numbers, which are ignored,
+                             * resulting in -2 printed.
+                            */
 console.log("\nQuestion 02: diagnosing incorrect answers:\n");
 
 let three   = "3";
@@ -50,11 +48,11 @@ console.log(lessThan2Corrected);
 
 console.log("\nWhich of the following console.log messages will print? Why?\n")
 
-if (0) console.log('#1 zero is true')   // the numeric value of true is 1, so this will not print
+if (0) console.log('#1 zero is true')   // the ONLY numeric value of true is 1, so this will not print
 if ("0") console.log('#2 zero is true') // the boolean value of any non-empty string is true, so this will print
 if (null) console.log('null is true')   // null is an intentional lack of a value, and objects without a value are false
 if (-1) console.log('negative is true') // -1 is a Number type of value -1, which is true (only the number 0 has a boolean value of false)
-if (1) console.log('positive is true')  // 1 is the numerical value of true
+if (1) console.log('positive is true')  // 1 is the numerical value of true, so this will print
 
 console.log("\nRewrite this if using the ternary/conditional operator '?'. Test it with different values for a and b. What does the ‘+=’ do?\n")
 
