@@ -235,16 +235,36 @@ let moreSports = teamSports;
 
 // todo question 10
 
-
-
 function Person(name, age) {
     this.name = name,
     this.age = age,
-    this.human = true
+    this.human = true,
+    this.canDrive = () => {
+        // driving requirements are age >= 16 years
+        console.log(this.age >= 16 ? true : false);
+    }
 }
 
 let person1 = new Person("DB Cooper", 24);
-let person2 = new Person("Fred", 38);
+let person2 = new Person("Fred", 15);
 
 printProperties(person1);
 printProperties(person2);
+
+class PersonClass {
+    constructor(name, age) {
+        this.name = name,
+        this.age = age
+    }
+    canDrive() {
+        // driving requirements are age >= 16 years
+        console.log(this.age >= 16 ? true : false);
+    }
+}
+
+const person3 = new PersonClass("Sam", 30);
+printProperties(person3);
+
+person1.canDrive();
+person2.canDrive();
+person3.canDrive();
