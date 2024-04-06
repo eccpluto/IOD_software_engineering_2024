@@ -8,7 +8,7 @@
 /**
  * 
  * @param {string} cssProp is a kebab case string to be converted.
- * @description Returns a string that is the camel case version of the input kebab case string.
+ * @returns a string that is the camel case version of the input kebab case string.
  */
 function camelCase(cssProp) {
     // locate the dash character patterns
@@ -21,13 +21,55 @@ function camelCase(cssProp) {
 
     return result;
 }
-console.log(`margin-left becomes: ${camelCase('margin-left')}`);
-console.log(`background-image becoms: ${camelCase('background-image')}`);
-console.log(`display becomes: ${camelCase('display')}`);
-console.log(`flex-container becomes: ${camelCase('flex-container')}`);
 
+// Test above using these!
+// console.log(`margin-left becomes: ${camelCase('margin-left')}`);
+// console.log(`background-image becoms: ${camelCase('background-image')}`);
+// console.log(`display becomes: ${camelCase('display')}`);
+// console.log(`flex-container becomes: ${camelCase('flex-container')}`);
+
+/**
+ * @description this one uses a for loop.
+ * @param {string} cssProp is a kebab case string to be converted.
+ * @returns a string that is the camel case version of the input kebab case string.
+ */
 function camelCaseVariantA(cssProp) {
-    
+    let components = String(cssProp).split('-');
+    for (let i = 1; i < components.length; i++) {
+        components[i] = components[i][0].toUpperCase() + components[i].substring(1);
+    }
 
+    return components.join('');
+}
+
+// Test above using these!
+// console.log(camelCaseVariantA('margin-left'));
+// console.log(camelCaseVariantA('background-image'));
+// console.log(camelCaseVariantA('display'));
+
+
+/**
+ * @desciption this one uses a conditional operator and a new for loop.
+ * @param {string} cssProp is a kebab case string to be converted.
+ * @returns a string that is the camel case version of the input kebab case string.
+ */
+function camelCaseVariantB(cssProp) {
+    let result = '';
+    for(let i = 0; i < String(cssProp).length; i++){
+
+        let hyphenIndex = 0;
+        
+        (cssProp[i] == '-') ? hyphenIndex = i : result += cssProp[i];
+
+        if(hyphenIndex != 0) {
+            result += cssProp[i+1].toUpperCase();
+            i++;
+        }
+    }
     return result;
 }
+
+// Test above using these!
+// console.log(camelCaseVariantB('margin-left'));
+// console.log(camelCaseVariantB('background-image'));
+// console.log(camelCaseVariantB('display'));
