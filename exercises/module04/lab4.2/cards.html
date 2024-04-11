@@ -34,14 +34,6 @@
             </div>
         </div>
     </template>
-    <template id="artist-card-template">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title"></div>
-                <div class="card-text"></div>
-            </div>
-        </div>
-    </template>
     <div id="card-list"></div>
     <script>
         function addCard(title, text) {
@@ -62,16 +54,18 @@
         function addArtistCard(name, portfolio) {
             // clone the template
             const template =
-                document.getElementById("artist-card-template")
+                document.getElementById("card-template")
                     .content.cloneNode(true);
             // populate the template
             template.querySelector('.card-title').innerText =
                 name;
             let content = '';
             portfolio.forEach(item => {
+                // create list items for each portfolio item
                 content += `<li>${item.title}: <img src=${item.url} width="200"></li>`;
             })
-            if(content) {
+            // only add this <ul> element wrapper if we have <li> to wrap
+            if (content) {
                 content = `<ul>${content}</ul>`;
                 template.querySelector('.card-text').innerHTML = content;
             }
@@ -107,7 +101,7 @@
         };
 
         // we can use the same fields for the artist name,
-        // butt will have to update the innerHTML if we want the nested div to accomodate
+        // but will have to update the innerHTML if we want the nested div to accomodate
         // the artist's portfolio items:
 
         addArtistCard(artist.name, artist.portfolio);
