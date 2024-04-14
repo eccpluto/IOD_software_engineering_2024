@@ -76,7 +76,7 @@ console.log(getTitles('j'));
  * @returns latest book.
  */
 function latestBook() {
-    // get a book object to test agains
+    // get a book object to test against
     let mostRecentBook = books.find(book => book.year);
     books.forEach(book => {
         if (mostRecentBook.year < book.year) {
