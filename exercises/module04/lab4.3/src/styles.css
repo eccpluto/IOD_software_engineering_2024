@@ -1,0 +1,7 @@
+.calculator-screen {
+    text-align: right;
+}
+
+.calculator-keys {
+    display: grid;
+}

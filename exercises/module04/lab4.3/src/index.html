@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- template for key-number class, we need 10 of these: 0 -> 9 -->
+    <template id="template-key-number">
+        <button class="key-number"></button>
+    </template>
+
+    <div class="container">
+        <div class="calculator-screen">0</div>
+        <div class="calculator-buttons">
+            <div class="calculator-number-keys">
+                <!-- number keys are populated here -->
+            </div>
+            <div class="calculator-operator-keys">
+                <button class="key-operator" onclick="Add()">+</button>
+                <button class="key-operator" onclick="Subtract()">-</button>
+                <button class="key-operator" onclick="Multiply()">x</button>
+                <button class="key-operator" onclick="Divide()">/</button>
+            </div>
+            <div class="calculator-special-keys">
+                <button class="key-special">=</button>
+                <button class="key-special">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        function handleNumberInput(event) {
+            if (event.target.nodeName == 'BUTTON') {
+                alert(event.target.textContent);
+            }
+        }
+        const calculatorNumberKeys = document.querySelector('.calculator-number-keys');
+        // test to see if the browser supports templates by checking the existence of the content attribute in template element
+        if ("content" in document.createElement("template")) {
+            // populate key classes
+            let number = 10;
+            for (let index = 0; index < number; index++) {
+                const numberButton = document.getElementById('template-key-number').content.cloneNode(true);
+                numberButton.querySelector('button').innerText = index;
+                calculatorNumberKeys.appendChild(numberButton);
+            }
+        }
+        // set event listeners, passes event to the handler so we get dynamic behavior (depends on which number is clicked)
+        calculatorNumberKeys.addEventListener('click', (event) => { handleNumberInput(event) });
+    </script>
+</body>
+
+</html>
