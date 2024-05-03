@@ -11,20 +11,22 @@
 <body>
     <!-- template for key-number class, we need 10 of these: 0 -> 9 -->
     <template id="template-key-number">
-        <button class="key-number"></button>
+        <button class="key-number grid-item"></button>
     </template>
 
-    <div class="container">
-        <div class="calculator-screen">0</div>
-        <div class="calculator-buttons">
-            <div class="calculator-number-keys">
-                <!-- number keys are populated here -->
+    <div class="flex-container">
+        <div class="calculator-screen flex">
+            <p></p>
+        </div>
+        <div class="calculator-buttons flex">
+            <div class="calculator-number-keys grid-container">
+                <!-- number keys are populated here in rows-->
             </div>
             <div class="calculator-operator-keys">
-                <button class="key-operator" onclick="Add()">+</button>
-                <button class="key-operator" onclick="Subtract()">-</button>
-                <button class="key-operator" onclick="Multiply()">x</button>
-                <button class="key-operator" onclick="Divide()">/</button>
+                <button class="key-operator">+</button>
+                <button class="key-operator">-</button>
+                <button class="key-operator">*</button>
+                <button class="key-operator">/</button>
             </div>
             <div class="calculator-special-keys">
                 <button class="key-special">=</button>
@@ -34,24 +36,49 @@
     </div>
     <script src="./main.js"></script>
     <script>
-        function handleNumberInput(event) {
+        // this script is essentally a controller which manipulates the DOM and calls model code
+        // we want to have data drive the UI, so updating the data should update the view
+        function handleKeyInput(event) {
             if (event.target.nodeName == 'BUTTON') {
-                alert(event.target.textContent);
+                let value = event.target.textContent;
+                let display = document.querySelector('.calculator-screen > p');
+                // special keys don't append values to the display
+                switch (value) {
+                    case "Reset":
+                        display.innerText = '';
+                        return;
+                        break;
+                    case "=":
+                        // this is the only place where the backend is called
+                        let input = document.querySelector('.calculator-screen > p').innerHTML;
+                        display.innerText = Calculate(input);
+                        return;
+                    default:
+                        // update display
+                        display.innerText += value;
+                        // 
+                        break;
+                }
             }
         }
-        const calculatorNumberKeys = document.querySelector('.calculator-number-keys');
-        // test to see if the browser supports templates by checking the existence of the content attribute in template element
-        if ("content" in document.createElement("template")) {
-            // populate key classes
-            let number = 10;
-            for (let index = 0; index < number; index++) {
-                const numberButton = document.getElementById('template-key-number').content.cloneNode(true);
-                numberButton.querySelector('button').innerText = index;
-                calculatorNumberKeys.appendChild(numberButton);
+
+        function createCalculator() {
+            const calculatorNumberKeys = document.querySelector('.calculator-number-keys');
+            // test to see if the browser supports templates by checking the existence of the content attribute in template element
+            if ("content" in document.createElement("template")) {
+                // populate key classes
+                let number = 9;
+                for (let index = number; index > -1; index--) {
+                    const numberButton = document.getElementById('template-key-number').content.cloneNode(true);
+                    numberButton.querySelector('button').innerText = index;
+                    calculatorNumberKeys.appendChild(numberButton);
+                }
             }
+            // set event listeners, passes event to the handler so we get dynamic behavior (depends on which key is clicked)
+            document.querySelector('.calculator-buttons').addEventListener('click', (event) => { handleKeyInput(event) });
         }
-        // set event listeners, passes event to the handler so we get dynamic behavior (depends on which number is clicked)
-        calculatorNumberKeys.addEventListener('click', (event) => { handleNumberInput(event) });
+
+        createCalculator()
     </script>
 </body>
 
