@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" class="result">
+        <table>
+            <tr>
+                <td><input type="button" value="7"></td>
+                <td><input type="button" value="8"></td>
+                <td><input type="button" value="9"></td>
+                <td><input type="button" value="/"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4"></td>
+                <td><input type="button" value="5"></td>
+                <td><input type="button" value="6"></td>
+                <td><input type="button" value="*"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1"></td>
+                <td><input type="button" value="2"></td>
+                <td><input type="button" value="3"></td>
+                <td><input type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0"></td>
+                <td><input type="button" value="+"></td>
+                <td><input type="button" value="Res"></td>
+                <td><input type="button" value="="></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    /**
+     * Creates an event handler which responds to button presses, and updates the interface accordingly.
+     * Only works for <number> <operator> <number> <equals> pattern, then should be reset manually by clicking "Res" key. 
+     */
+    function makeHandler() {
+        let op = ''; // no operator on start of app
+
+        /**
+         * Calls server to do calcualtions, takes a element which contains the expression, which will become the result.
+         */
+        function calculate(result) {
+            // expression = String(expression);
+            let expression = result.value;
+            let x = expression.substring(0, expression.indexOf(op));
+            let y = expression.substring(x.length + 1);
+            switch (op) {
+                case "+":
+                    fetch(`/calculator/add?num1=${x}&num2=${y}`)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            result.value = data.result;
+                        })
+                    break;
+                case "-":
+                    fetch(`/calculator/subtract?num1=${x}&num2=${y}`)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            result.value = data.result;
+                        })
+                    break;
+                case "*":
+                    fetch(`/calculator/multiply?num1=${x}&num2=${y}`)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            result.value = data.result;
+                        })
+                    break;
+                case "/":
+                    fetch(`/calculator/divide?num1=${x}&num2=${y}`)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            result.value = data.result;
+                        })
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        /**
+         * First pass of event handling
+         */
+        function handleKeyInput(event) {
+            console.log(event.target.nodeName);
+            if (event.target.nodeName == 'INPUT') {
+                console.log(`operator: ${op}`);
+                let value = event.target.value;
+                let result = document.querySelector('.result');
+                // // special keys don't append values to the display
+                switch (value) {
+                    case "Res":
+                        result.value = '';
+                        op = '';
+                        return;
+                    case "=":
+                        calculate(result);
+                        op = '';
+                        break;
+                    case "+":
+                        op = "+";
+                        result.value += value;
+                        break;
+
+                    case "-":
+                        op = "-";
+                        result.value += value;
+                        break;
+
+                    case "*":
+                        op = "*";
+                        result.value += value;
+                        break;
+
+                    case "/":
+                        op = "/";
+                        result.value += value;
+                        break;
+
+                    default:
+                        // update display
+                        result.value += value;
+                        // 
+                        break;
+                }
+            }
+        }
+        return handleKeyInput;
+    }
+
+    // get a reference to the event handler as defined above, which instatiates a closure so we can preserve the current operator
+    // (might be overkill to store the state of the operator, as we can just extract it from the expression to be parsed, might be good for validating order of operations..) 
+    const handler = makeHandler();
+    // handler.bind()
+
+    // setup the super-listener
+    document.querySelector('table').addEventListener('click', handler);
+
+</script>
+
+</html>
