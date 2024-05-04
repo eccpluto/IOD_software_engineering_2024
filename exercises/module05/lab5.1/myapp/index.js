@@ -15,6 +15,8 @@ const appStaticTestSever = express();
 const portA = 3000;
 const portB = 3001;
 
+// appRandomNumberServer.use('/', express.static('public'));
+
 // binding for endpoint: bind a get endpoint to the object app using the / URL (root) 
 appRandomNumberServer.get('/', (req, res) => {
     res.send('Hello from random number server. \nGo to /generate to get a random number!');
