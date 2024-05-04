@@ -1,4 +1,5 @@
 /**
+ * Run npm ci to get dependencies ot this won't work
  * Use npm start to launch the express server, the root ('/') endpoint tells you about available endpoints.
  */
 
@@ -13,7 +14,6 @@ const appStaticTestSever = express();
 // define some ports, in this case for listening for requests
 const portA = 3000;
 const portB = 3001;
-
 
 // binding for endpoint: bind a get endpoint to the object app using the / URL (root) 
 appRandomNumberServer.get('/', (req, res) => {
