@@ -1,0 +1,110 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My Express App",
+        "description": "API for serving friends information",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Friends",
+            "description": "API friends in the system"
+        }
+    ],
+    "paths": {
+        "/friends/": {
+            "get": {
+                "tags": [
+                    "Get friends service"
+                ],
+                "summary": "Get all the current friends from server",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This service returns the friends currently stored on the server"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Post friend service"
+                ],
+                "summary": "Add a new friend",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successfully adds a new friend"
+                    }
+                }
+            }
+        },
+        "/friends/filter": {
+            "get": {
+                "tags": [
+                    "Friends filter service"
+                ],
+                "summary": "Get friend that correspond to a gender and / or letter of first name",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This service returns the filtered friends"
+                    },
+                    "404": {
+                        "description": "The service did not find any friends matching the provided filters"
+                    }
+                }
+            }
+        },
+        "/friends/info": {
+            "get": {
+                "tags": [
+                    "Header request info service"
+                ],
+                "summary": "Get all the current friends from server",
+                "parameters": []
+                }
+            }
+        },
+        "/friends/:id": {
+            "get": {
+                "tags": [
+                    "Get friend from id service"
+                ],
+                "summary": "Get all the current friends from server",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This service returns the friends currently stored on the server"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Update friend from id service"
+                ],
+                "summary": "Get all the current friends from server",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "This service returns the friends currently stored on the server"
+                    }
+                }
+            }
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
