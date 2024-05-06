@@ -1,14 +1,10 @@
-const calculatorRoutes = require('./routes/calculatorRoutes.js');
-const express = require('express');
+// import the app object, which has already been initialised with the calculator router, and business logic
+const app = require('./app');
 
-app = express();
+// declare a port
+const port = 3000;
 
-port = 3000;
-
-// middleware to deploy static content
-app.use('/', express.static('public'));
-app.use('/calculator', calculatorRoutes);
-
+// start the server
 app.listen(port, () => {
     console.log(`app started, listening on port: ${port}`);
 })
