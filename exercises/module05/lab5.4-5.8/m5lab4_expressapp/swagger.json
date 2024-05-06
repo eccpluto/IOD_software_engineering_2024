@@ -40,6 +40,9 @@
                 "responses": {
                     "200": {
                         "description": "Successfully adds a new friend"
+                    },
+                    "500": {
+                        "description": "Could not add a friend at least one of gender or name was not provided"
                     }
                 }
             }
@@ -66,9 +69,8 @@
                 "tags": [
                     "Header request info service"
                 ],
-                "summary": "Get all the current friends from server",
+                "summary": "Get information about the request header",
                 "parameters": []
-                }
             }
         },
         "/friends/:id": {
@@ -76,11 +78,14 @@
                 "tags": [
                     "Get friend from id service"
                 ],
-                "summary": "Get all the current friends from server",
+                "summary": "Try and get the friend corresponsing to the id from server",
                 "parameters": [],
                 "responses": {
                     "200": {
-                        "description": "This service returns the friends currently stored on the server"
+                        "description": "This service returns a friend given an id number from the server"
+                    },
+                    "404": {
+                        "description": "The provided id doesn't exist in the server"
                     }
                 }
             },
@@ -88,23 +93,26 @@
                 "tags": [
                     "Update friend from id service"
                 ],
-                "summary": "Get all the current friends from server",
+                "summary": "Update details about an existing friend in the server",
                 "parameters": [],
                 "responses": {
                     "200": {
-                        "description": "This service returns the friends currently stored on the server"
+                        "description": "Successfully updated the target friend"
+                    },
+                    "404": {
+                        "description": "Could not find the provided id number and did nothing"
                     }
                 }
             }
-        }
-    },
-    "schemes": [
-        "http"
-    ],
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ]
+        },
+        "schemes": [
+            "http"
+        ],
+        "consumes": [
+            "application/json"
+        ],
+        "produces": [
+            "application/json"
+        ]
+    }
 }
