@@ -1,22 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const calculatorController = require('../controllers/calculatorController');
-const calculatorControllerInstance = new calculatorController();
 
 router.get('/add', (req, res) => {
-    calculatorControllerInstance.add(req, res);
+    calculatorController.add(req, res);
 });
 
 router.get('/subtract', (req, res) => {
-    calculatorControllerInstance.subtract(req, res);
+    calculatorController.subtract(req, res);
 })
 
 router.get('/divide', (req, res) => {
-    calculatorControllerInstance.divide(req, res);
+    calculatorController.divide(req, res);
 })
 
 router.get('/multiply', (req, res) => {
-    calculatorControllerInstance.multiply(req, res);
+    calculatorController.multiply(req, res);
 })
 
 module.exports = router;
