@@ -1,3 +1,6 @@
+const logger = require('./logger');
+const myLogger = new logger();
+
 class calculator {
     constructor() {
         // millisecond-unique identifier
@@ -12,6 +15,7 @@ class calculator {
      * @returns the sum of x and y
      */
     add(x, y) {
+        myLogger.log(this.id, `adding ${x} and ${y}`);
         return x + y;
     };
 
@@ -22,6 +26,7 @@ class calculator {
      * @returns the subtractive difference x - y
      */
     subtract(x, y) {
+        myLogger.log(this.id, `subtracting ${x} and ${y}`);
         return x - y;
     };
 
@@ -32,6 +37,7 @@ class calculator {
      * @returns the multiplicative product x * y
      */
     multiply(x, y) {
+        myLogger.log(this.id, `multiplying ${x} and ${y}`);
         return x * y;
     };
 
@@ -42,6 +48,7 @@ class calculator {
      * @returns the result of dividing x / y
      */
     divide(x, y) {
+        myLogger.log(this.id, `dividing ${x} and ${y}`);
         return x / y;
     }
 }
