@@ -1,7 +1,7 @@
 class calculator {
     constructor() {
         // millisecond-unique identifier
-        this.id = Date.now();
+        this.id = Math.random();
     }
 
     // public methods
