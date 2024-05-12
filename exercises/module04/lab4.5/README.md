@@ -42,7 +42,5 @@ behavior, which stops the form from doing a
 normal post on its submit event.
 
 2) You can simply create a form without using an
-actual html ```<form>```. 
-
-Use text field inputs and a
+actual html ```<form>```. Use text field inputs and a
 button with onclick event instead.

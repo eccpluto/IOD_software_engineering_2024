@@ -17,6 +17,15 @@
 </head>
 
 <body>
+    <form action="getNewsItems()">
+        <h1>Enter some news!</h1>
+        <label for="newsTitle">Title:</label><br>
+        <input type="text"><br>
+        <label for="newsContent">Content:</label><br>
+        <input type="text">
+        <input type="submit" name="" id="" value="Submit">
+    </form>
+
     <div id="news-item-list" class="row"></div>
     <script>
         let newsItems = [
@@ -50,7 +59,6 @@
             document.querySelector('#news-item-list').appendChild(template);
         }
 
-
         // get data asynchronously, then use it to populate a template
         function updateNewsItems() {
             const target = document.getElementById("news-item-list");
@@ -59,6 +67,21 @@
         }
 
         setInterval(updateNewsItems, 5000);
+
+        // handle form submission
+        const form = document.querySelector('form');
+        form.addEventListener("submit", function (event) {
+            // console.log(event);
+            event.preventDefault();
+            // title
+            const title = this.elements[0].value;
+            // content
+            const content = this.elements[1].value;
+            // id
+            const id = newsItems.length+1;
+            // add an item
+            newsItems.push({id, title, content});
+        })
 
     </script>
 </body>
