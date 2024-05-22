@@ -1,4 +1,4 @@
-# Module 6 Exercise 2 and 4
+# Module 6 Exercise 2, 4 and 5
 
 ## Exercise 2
 - Create a BigCats component, in its own file, which uses

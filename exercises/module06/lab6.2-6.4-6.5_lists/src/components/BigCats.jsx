@@ -1,9 +1,10 @@
 import { useState } from "react";
 import SingleCat from "./SingleCat";
+import AddCatForm from "./AddCatForm";
 
 function BigCats() {
     // define the cats as an arraty of objects (raw data)
-    const cats = [
+    let cats = [
         { name: 'Cheetah', latinName: 'Acinonyx jubatus' },
         { name: 'Cougar', latinName: 'Puma concolor' },
         { name: 'Jaguar', latinName: 'Panthera onca' },
@@ -96,6 +97,7 @@ function BigCats() {
     // return the collated list in the form of a BigCats component
     return (
         <div className="BigCats componentBox">
+            <AddCatForm cats={cats}/>
             <h2><i>Use these buttons to move betweem list displays.</i></h2>
             <h3><i>Note the display will preseve the combination of clicked buttons until reset is clicked.</i></h3>
 
