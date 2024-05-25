@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function AddCatForm(cats) {
+function AddCatForm(props) {
 
     const [catName, setCatName] = useState('');
     const [catLatinName, setCatLatinName] = useState('');
@@ -15,11 +15,8 @@ function AddCatForm(cats) {
             catLatinName: ${catLatinName}\n
             catIamgeURL: ${catImageURL}`
         );
-
-        Array(cats).push({
-            name: catName,
-            latinName: catLatinName
-        })
+        
+        props.callbackAddNewCat(catName, catLatinName, catImageURL);
     }
 
     return (
