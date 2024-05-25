@@ -6,11 +6,16 @@ function AddCatForm(cats) {
     const [catLatinName, setCatLatinName] = useState('');
     const [catImageURL, setCatImageURL] = useState('');
 
-    function handleFormSubmit() {
+    // this is declared using arrow syntax so we can cleanly pass the function name into the form
+    const handleFormSubmit = (e) => {
         // update the state which was passed down from parent
-        console.log(catName);
-        console.log(catLatinName);
-        console.log(catImageURL);
+        e.preventDefault();
+        console.log(`
+            catName: ${catName}\n
+            catLatinName: ${catLatinName}\n
+            catIamgeURL: ${catImageURL}`
+        );
+
         Array(cats).push({
             name: catName,
             latinName: catLatinName
@@ -18,25 +23,36 @@ function AddCatForm(cats) {
     }
 
     return (
+        // wrap the rendered component in div.AddCatForm class for potential css access
         <div className="AddCatForm">
+
+            {/* wrapping controlled form elements inside a form, so we can get submit behaviour */}
             <form onSubmit={handleFormSubmit}>
 
                 <div className="formRow">
-                    <label>Cat name: </label>
-                    <input type="text" value={catName}
-                        onChange={(e) => { setCatName(e.target.value) }} />
+                    {/* we will make label a controlled form element, by specifying value and onChange*/}
+                    <label>Cat name:
+                        <input type="text" value={catName}
+                            onChange={(e) => { setCatName(e.target.value) }} />
+                    </label>
                 </div>
+
                 <div className="formRow">
-                    <label>Latin name: </label>
-                    <input type="text" value={catLatinName}
-                        onChange={(e) => { setCatLatinName(e.target.value) }} />
+                    <label>Latin name:
+                        <input type="text" value={catLatinName}
+                            onChange={(e) => { setCatLatinName(e.target.value) }} />
+                    </label>
                 </div>
+
                 <div className="formRow">
-                    <label>Image URL: </label>
-                    <input type="text" value={catImageURL}
-                        onChange={(e) => { setCatImageURL(e.target.value) }} />
+                    <label>Image URL:
+                        <input type="text" value={catImageURL}
+                            onChange={(e) => { setCatImageURL(e.target.value) }} />
+                    </label>
                 </div>
-                <button>Add Cat</button>
+
+                {/* <button>Add Cat</button> */}
+                <input type="submit" value='Add my cat!'/>
             </form>
         </div>
     )

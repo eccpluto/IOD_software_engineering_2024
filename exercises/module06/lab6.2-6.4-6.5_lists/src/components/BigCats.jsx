@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+// child components that will be managed by this component
 import SingleCat from "./SingleCat";
 import AddCatForm from "./AddCatForm";
 
@@ -97,6 +99,7 @@ function BigCats() {
     // return the collated list in the form of a BigCats component
     return (
         <div className="BigCats componentBox">
+            {/* pass cats property so the form can modify the list */}
             <AddCatForm cats={cats}/>
             <h2><i>Use these buttons to move betweem list displays.</i></h2>
             <h3><i>Note the display will preseve the combination of clicked buttons until reset is clicked.</i></h3>

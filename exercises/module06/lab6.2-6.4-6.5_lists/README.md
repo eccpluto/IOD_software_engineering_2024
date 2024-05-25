@@ -26,5 +26,6 @@ and image details for a new Big Cat (extending Exercises
 
 - Submitting the form should update the parent BigCats
 component and re-render the list
-• Add a Delete link next to each cat allowing it to be removed
+
+- Add a Delete link next to each cat allowing it to be removed
 from the list.
