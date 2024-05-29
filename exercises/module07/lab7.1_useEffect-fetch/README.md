@@ -1,4 +1,4 @@
-# Module 7 Exercise 1 and 2
+# Module 7 Exercise 1
 
 ## Exercise 1
 - Using the following starter code, complete the BitcoinRates component
