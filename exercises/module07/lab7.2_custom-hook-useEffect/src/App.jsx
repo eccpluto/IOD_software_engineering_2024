@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <h1>Module 7 lab 1</h1>
+    <h1>Module 7 lab 2</h1>
     <BitcoinRates></BitcoinRates>
     </>
   )
