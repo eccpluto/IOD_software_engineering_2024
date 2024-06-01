@@ -4,6 +4,8 @@ import AboutPage from "../pages/AboutPage";
 import DashboardPage from "../pages/DashboardPage";
 import { DashboardMessages, DashboardTasks } from "../pages/DashboardPage";
 import PageNotFound from "../pages/PageNotFound";
+import LoginPage from "../pages/LoginPage";
+import BitcoinRatesPage from "../pages/BitcoinRatesPage";
 
 function AppRoutes(props) {
 
@@ -20,6 +22,10 @@ function AppRoutes(props) {
             </Route>
 
             <Route path='/about' element={<AboutPage {...props} />} />
+
+            <Route path="/login" element={<LoginPage {...props} />}></Route>
+
+            <Route path="/rates" element={<BitcoinRatesPage{...props} />}></Route>
 
             {/* special route to handle if none of the above match */}
             <Route path="*" element={<PageNotFound />} />

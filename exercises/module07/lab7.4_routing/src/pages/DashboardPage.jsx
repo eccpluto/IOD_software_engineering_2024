@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 
-export default function DashBoardPage() {
+export default function DashboardPage() {
     const navigate = useNavigate();
 
     return (
