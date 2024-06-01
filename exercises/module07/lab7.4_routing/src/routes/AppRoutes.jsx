@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import DashboardPage from "../pages/DashboardPage";
-import { DashboardMessages, DashboardTasks } from "../pages/DashboardPage";
+// import AboutPage from "../pages/AboutPage";
+// import DashboardPage from "../pages/DashboardPage";
+// import { DashboardMessages, DashboardTasks } from "../pages/DashboardPage";
 import PageNotFound from "../pages/PageNotFound";
 import LoginPage from "../pages/LoginPage";
 import BitcoinRatesPage from "../pages/BitcoinRatesPage";
@@ -15,13 +15,13 @@ function AppRoutes(props) {
             <Route index element={<HomePage {...props} />}></Route>
 
             {/* nested routes, matches on /dash/messages etc */}
-            <Route path="dash" element={<DashboardPage {...props} />}>
+            {/* <Route path="dash" element={<DashboardPage {...props} />}> */}
                 {/* child routes */}
-                <Route path="messages" element={<DashboardMessages />} />
-                <Route path="tasks" element={<DashboardTasks />} />
-            </Route>
+                {/* <Route path="messages" element={<DashboardMessages />} /> */}
+                {/* <Route path="tasks" element={<DashboardTasks />} /> */}
+            {/* </Route> */}
 
-            <Route path='/about' element={<AboutPage {...props} />} />
+            {/* <Route path='/about' element={<AboutPage {...props} />} /> */}
 
             <Route path="/login" element={<LoginPage {...props} />}></Route>
 
