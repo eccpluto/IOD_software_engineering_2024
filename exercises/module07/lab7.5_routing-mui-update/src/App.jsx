@@ -2,8 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import AppRoutes from './routes/AppRoutes'
 import { MoodProvider } from './context/MoodContext'
-import NavBar from './components/NavBar'
 import { UserProvider } from './context/UserContext'
+import MyAppBar from './components/SearchAppBar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +12,8 @@ function App() {
     <>
       <UserProvider>
         <MoodProvider>
-          <NavBar></NavBar>
+          <MyAppBar></MyAppBar>
+          {/* <NavBar></NavBar> */}
           <AppRoutes></AppRoutes>
         </MoodProvider>
       </UserProvider>
