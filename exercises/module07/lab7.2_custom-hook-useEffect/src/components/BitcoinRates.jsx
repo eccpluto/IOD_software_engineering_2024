@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useData } from "../hooks/useData";
 
 const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
@@ -6,38 +7,9 @@ function BitcoinRates() {
 
     const [currency, setCurrency] = useState(currencies[0]);
 
-    // store the dynamic variable as a state variable, since we are needing to update
-    // the component display with this
-    const [rate, setRate] = useState('');
+    // string only changes with dynamic state curerncy
+    const data = useData(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`);
 
-    // define an effect to get botcoin rates, which will update the rate display in response
-    // to a user selecting a currency
-    useEffect(() => {
-
-        let ignore = false;
-
-        console.log('Running effect');
-        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=` +
-            `${currency}`)
-            .then(response => response.json())
-            .then(json => {
-                const currKey = Object.keys(json.bitcoin)[0];
-
-                //
-                if (!ignore) setRate(json.bitcoin[currKey]);
-            }),
-            // cross origin resource sharing:
-            // cors generally for when we are interested
-            // in the response from the server, not just
-            // probing for analytics/ behaviour or server
-            { mode: 'cors' };
-
-            return () => {
-                console.log('Cleaning up');
-                ignore = true;
-
-            }
-    }, [currency])
 
     // fetch URL: https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}
     const options = currencies.map(curr => <option value={curr} key={curr}>{curr}</option>);
@@ -49,7 +21,7 @@ function BitcoinRates() {
                     {options}
                 </select>
             </label>
-            <p>Rate: {rate}</p>
+            <p>Rate: {data}</p>
         </div>
     )
 }
