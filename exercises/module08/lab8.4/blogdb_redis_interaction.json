@@ -1,0 +1,380 @@
+{
+  "tables": [
+    {
+      "id": 0,
+      "name": "users",
+      "x": 35,
+      "y": 297,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1,
+          "size": 255
+        },
+        {
+          "name": "username",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 255
+        },
+        {
+          "name": "password",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1719207695849
+    },
+    {
+      "id": 1,
+      "name": "likes",
+      "x": 341,
+      "y": 32,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "blog_post_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1719207707516
+    },
+    {
+      "id": 2,
+      "name": "comments",
+      "x": 722,
+      "y": 235,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "blog_post_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 255
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1719207726983
+    },
+    {
+      "id": 3,
+      "name": "blog_posts",
+      "x": 366,
+      "y": 526,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "title",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2,
+          "size": 255
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1719207737683
+    },
+    {
+      "id": 4,
+      "name": "comment_cache",
+      "x": 1197.4607250482927,
+      "y": 72.3768847288672,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "blog_post_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        },
+        {
+          "name": "content",
+          "type": "VARCHAR",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 255
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1719208429797
+    }
+  ],
+  "relationships": [
+    {
+      "startTableId": 1,
+      "startFieldId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "likes_user_id_fk",
+      "id": 0
+    },
+    {
+      "startTableId": 2,
+      "startFieldId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "comments_user_id_fk",
+      "id": 1
+    },
+    {
+      "startTableId": 3,
+      "startFieldId": 1,
+      "endTableId": 0,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "blog_posts_user_id_fk",
+      "id": 2
+    },
+    {
+      "startTableId": 2,
+      "startFieldId": 2,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "comments_blog_post_id_fk",
+      "id": 3
+    },
+    {
+      "startTableId": 1,
+      "startFieldId": 2,
+      "endTableId": 3,
+      "endFieldId": 0,
+      "cardinality": "One to one",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "likes_blog_post_id_fk",
+      "id": 4
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [
+    {
+      "id": 0,
+      "name": "BlogDB",
+      "x": -23,
+      "y": -38,
+      "width": 1045.6673540164065,
+      "height": 859.9300982257815,
+      "color": "#175e7a"
+    },
+    {
+      "id": 1,
+      "name": "Redis_comment_cache",
+      "x": 1080.166731362501,
+      "y": -29.55739746406266,
+      "width": 491.2697874898438,
+      "height": 570.0674111585939,
+      "color": "#175e7a"
+    }
+  ],
+  "types": [],
+  "title": "Untitled Diagram"
+}
