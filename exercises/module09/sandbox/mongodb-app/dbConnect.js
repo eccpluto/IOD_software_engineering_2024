@@ -3,7 +3,8 @@ const Mongoose = require('mongoose');
 
 // note this Monfodb database has been constructed externally
 // and is made available at the specified uri on port 21017
-const uri = process.env.DB_URI || "mongodb://localhost/BlogDB";
+// use explicit ipv4 address if localhost is not configured correctl
+const uri = process.env.DB_URI || "mongodb://127.0.0.1/BlogDB";
 
 Mongoose.connect(uri)
     .then(() => console.log('MongoDB connected.'))
