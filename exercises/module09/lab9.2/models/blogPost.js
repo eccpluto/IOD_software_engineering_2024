@@ -11,4 +11,5 @@ const blogPostSchema = new Schema({
 });
 
 // export the model for a single entry in the collection
-module.exports = mongoose.model('blogPost', blogPostSchema);
+// last arg explicity defines the name of the pre-created collection in MongoDB
+module.exports = mongoose.model('blogPost', blogPostSchema, "blogPosts");
