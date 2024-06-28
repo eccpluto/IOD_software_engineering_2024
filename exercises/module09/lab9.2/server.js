@@ -9,9 +9,12 @@ require("dotenv").config();
 // pull in database setup code
 let dbConnect = require('./dbConnect');
 
-// pull in routes
-// let userRoutes = require('./routes/userRoutes');
-// app.use('/api/users', userRoutes);
+// pull in routes, note these could 
+let routes = require('./routes');
+app.use('/api/blogposts', routes.blogPostRoutes);
+app.use('/api/comments', routes.commentRoutes);
+app.use('/api/likes', routes.likeRoutes);
+app.use('/api/users', routes.userRoutes);
 
 app.use(express.json());
 
