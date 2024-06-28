@@ -1,14 +1,14 @@
 let express = require("express");
 
 let router = express.Router();
+let userController = require('../controllers').userController;
 
 // let Controllers = require("../controllers"); // index.js
 
 // Adds a GET route to return all users
 router.get('/', (req, res) => {
     console.log('users');
-    //TODO
-    // Controllers.userController.getUsers(res);
+    userController.getUsers(res);
 })
 
 // Adds a POST route to create a new user
