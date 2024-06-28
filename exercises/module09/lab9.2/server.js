@@ -9,6 +9,9 @@ require("dotenv").config();
 // pull in database setup code
 let dbConnect = require('./dbConnect');
 
+// needed to parse json
+app.use(express.json());
+
 // pull in routes, note these could 
 let routes = require('./routes');
 app.use('/api/blogposts', routes.blogPostRoutes);
