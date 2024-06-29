@@ -10,5 +10,5 @@ docker image.
 
 Run this to get the image from dockerhub:
 ```
-    # docker pull spaceman961/socketchatapp/
+    # docker pull spaceman961/socketchatapp
 ```
